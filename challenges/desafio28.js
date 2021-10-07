@@ -1,5 +1,8 @@
 const company = "LATAM AIRLINES BRASIL";
-const aux = db.resumoVoos.find({ empresa: company, natureza: "Doméstica" }).count();
+const aux = db.resumoVoos.find({ 
+  "empresa.nome": company, 
+  natureza: "Doméstica",
+}).count();
 
 db.resumoVoos.insertOne({
   "empresa.nome": company,
